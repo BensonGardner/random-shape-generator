@@ -1,0 +1,43 @@
+
+
+<html>
+<body>
+<canvas id="c" width="1080" height="720" style="position:absolute;"></canvas>
+
+
+<Script>
+
+var c = document.getElementById("c");
+var ctx = c.getContext("2d");
+
+var x = 500 * Math.random();
+var y = 400 * Math.random();
+
+var reps = 12 * Math.random();
+
+ctx.beginPath();
+ctx.moveTo(x,y);
+
+var i;
+
+for (i = 0; i < reps; i++) {
+	console.log(ctx);
+	var a= 500 * Math.random();
+	var b = 400 * Math.random();
+	var a2 = 500 * Math.random();
+	var b2  = 400 * Math.random();
+	var r = 2 * Math.PI / Math.random();
+	ctx.arcTo(a, b, a2, b2, r);
+	console.log(a,b,a2,b2,r);
+}
+
+var r = 2 * Math.random() / Math.PI;
+console.log(r);
+
+ctx.arcTo(a2, b2, x, y, r);
+ctx.closePath();
+ctx.stroke();
+
+</script>
+</body>
+</html>
