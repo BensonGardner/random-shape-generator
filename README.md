@@ -1,21 +1,17 @@
-# Random Shape Generator
+# Random-Shape Generator
+Surprisingly delightful modernist-looking random shapes.
 
-This webpage is a random shape generator. A user can simply reload the page to see a randomly generated shape. The possibilities are endless and surprisingly entrancing.
+## How It Works
+Right now, this is super simple. Download the files and load index.html,
+reloading the page when you're ready for a new shape.
 
-## Structure
+## Future Additions
+It might be nice to add features such as automatically changing shapes every
+so often, or the ability to capture a shape as a GIF or JPEG.
 
-Random shape generator is quite simple; it only does one thing.
+## Licensing
+Created by Benson Gardner.
 
-## How to Use
+![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
 
-Simply download the HTML file and load into a browser.
-
-## Issues
-
-* There is currently no way to change shapes except by reloading the page.
-* There is no way to load the generator except by downloading the page; there is currently no cloud-based version of the page.
-
-## License
-
-All Rights Reserved, Uppteen Dupplings Produccshuns.
-
+Licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License]("http://creativecommons.org/licenses/by-sa/4.0/").
