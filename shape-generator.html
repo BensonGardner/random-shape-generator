@@ -1,47 +1,48 @@
 
 
 <html>
-<body onclick="generateShape()" onload="generateShape()">
-<canvas id="c" width="1080" height="720" style="position:absolute;"></canvas>
+	<body onclick="generateShape()" onload="generateShape()">
 
+		<canvas id="c" style="position:absolute;"></canvas>
 
+		<script>
 
-<Script>
+			var generateShape = function() {
+				console.log(window.innerHeight);
+				var c = document.getElementById("c");
+				var ctx = c.getContext("2d");
+				c.width = window.innerWidth;
+				c.height = window.innerHeight;
+				console.log(c.height + " is height. Width is " + c.width);
+				// First undo any shape done previously
+				ctx.clearRect(0, 0, c.width, c.height);
 
-var generateShape = function() {
+				var x = 500 * Math.random();
+				var y = 400 * Math.random();
 
-	var c = document.getElementById("c");
-	var ctx = c.getContext("2d");
+				var reps = 12 * Math.random();
 
-	// First undo any shape done previously
-	ctx.clearRect(0, 0, 1080, 720);
+				ctx.beginPath();
+				ctx.moveTo(x,y);
 
-	var x = 500 * Math.random();
-	var y = 400 * Math.random();
+				var i;
 
-	var reps = 12 * Math.random();
+				for (i = 0; i < reps; i++) {
+					var a= 500 * Math.random();
+					var b = 400 * Math.random();
+					var a2 = 500 * Math.random();
+					var b2  = 400 * Math.random();
+					var r = 2 * Math.PI / Math.random();
+					ctx.arcTo(a, b, a2, b2, r);
+				}
 
-	ctx.beginPath();
-	ctx.moveTo(x,y);
+				var r = 2 * Math.random() / Math.PI;
 
-	var i;
+				ctx.arcTo(a2, b2, x, y, r);
+				ctx.closePath();
+				ctx.stroke();
+			};
 
-	for (i = 0; i < reps; i++) {
-		var a= 500 * Math.random();
-		var b = 400 * Math.random();
-		var a2 = 500 * Math.random();
-		var b2  = 400 * Math.random();
-		var r = 2 * Math.PI / Math.random();
-		ctx.arcTo(a, b, a2, b2, r);
-	}
-
-	var r = 2 * Math.random() / Math.PI;
-
-	ctx.arcTo(a2, b2, x, y, r);
-	ctx.closePath();
-	ctx.stroke();
-};
-
-</script>
-</body>
+		</script>
+	</body>
 </html>
