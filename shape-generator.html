@@ -1,4 +1,5 @@
-
+<!-- The page loads a modernist random shape, which changes every time
+the user clicks anywhere on the screen.-->.
 
 <html>
 	<body onclick="generateShape()" onload="generateShape()">
@@ -6,7 +7,7 @@
 		<canvas id="c" style="position:absolute;"></canvas>
 
 		<script>
-
+// still need to add docu in-line in the js and also need to make the numbers bigger.
 			var generateShape = function() {
 				console.log(window.innerHeight);
 				var c = document.getElementById("c");
