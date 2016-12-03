@@ -2,6 +2,9 @@
 the user clicks anywhere on the screen.-->.
 
 <html>
+
+	<!--script src="http://192.168.0.11:8080/target/target-script-min.js#anonymous"></script-->
+
 	<body onclick="generateShape()" onload="generateShape()">
 
 		<canvas id="c" style="position:absolute;"></canvas>
@@ -18,8 +21,8 @@ the user clicks anywhere on the screen.-->.
 				// First undo any shape done previously
 				ctx.clearRect(0, 0, c.width, c.height);
 
-				var x = 500 * Math.random();
-				var y = 400 * Math.random();
+				var x = (c.width * 1.5) * Math.random();
+				var y = (c.width * 1.5) * Math.random();
 
 				var reps = 12 * Math.random();
 
