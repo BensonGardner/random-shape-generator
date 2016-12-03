@@ -3,14 +3,12 @@ the user clicks anywhere on the screen.-->.
 
 <html>
 
-	<!--script src="http://192.168.0.11:8080/target/target-script-min.js#anonymous"></script-->
-
 	<body onclick="generateShape()" onload="generateShape()">
 
 		<canvas id="c" style="position:absolute;"></canvas>
 
 		<script>
-// still need to add docu in-line in the js and also need to make the numbers bigger.
+// still need to add docu in-line in the js.
 			var generateShape = function() {
 				console.log(window.innerHeight);
 				var c = document.getElementById("c");
@@ -21,9 +19,9 @@ the user clicks anywhere on the screen.-->.
 				// First undo any shape done previously
 				ctx.clearRect(0, 0, c.width, c.height);
 
-				var x = (c.width * 1.5) * Math.random();
-				var y = (c.width * 1.5) * Math.random();
-
+				var x = (c.width) * Math.random();
+				var y = (c.height) * Math.random();
+				console.log(x + " is x and y is " + y);
 				var reps = 12 * Math.random();
 
 				ctx.beginPath();
@@ -32,10 +30,10 @@ the user clicks anywhere on the screen.-->.
 				var i;
 
 				for (i = 0; i < reps; i++) {
-					var a= 500 * Math.random();
-					var b = 400 * Math.random();
-					var a2 = 500 * Math.random();
-					var b2  = 400 * Math.random();
+					var a = (c.width) * Math.random();
+					var b = (c.height) * Math.random();
+					var a2 = (c.width) * Math.random();
+					var b2  = (c.height) * Math.random();
 					var r = 2 * Math.PI / Math.random();
 					ctx.arcTo(a, b, a2, b2, r);
 				}
