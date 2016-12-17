@@ -15,20 +15,21 @@ the user clicks anywhere on the screen.-->
 				var ctx = c.getContext("2d");
 				c.width = window.innerWidth;
 				c.height = window.innerHeight;
-				console.log(c.height + " is height. Width is " + c.width);
-				// First undo any shape done previously
+
+				// First undo last shape made
 				ctx.clearRect(0, 0, c.width, c.height);
 
+				// Begin making random shape
+				ctx.beginPath();
+
+				// Start the line at a random point
 				var x = (c.width) * Math.random();
 				var y = (c.height) * Math.random();
-				console.log(x + " is x and y is " + y);
-				var reps = 12 * Math.random();
-
-				ctx.beginPath();
 				ctx.moveTo(x,y);
 
+				// For 1-12 times, arc to another random point
+				var reps = 12 * Math.random();
 				var i;
-
 				for (i = 0; i < reps; i++) {
 					var a = (c.width) * Math.random();
 					var b = (c.height) * Math.random();
@@ -38,8 +39,8 @@ the user clicks anywhere on the screen.-->
 					ctx.arcTo(a, b, a2, b2, r);
 				}
 
+				// Arc back to starting point and draw the shape
 				var r = 2 * Math.random() / Math.PI;
-
 				ctx.arcTo(a2, b2, x, y, r);
 				ctx.closePath();
 				ctx.stroke();
